@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Ligmite Citizenship</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+			background-color: lightblue;
+            line-height: 1.5;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+			margin-top: 60px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid black;
+            border-radius: 4px;
+			background-color: lightblue;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+		.top-bar {
+		  background-color: midnightblue; /* Light blue background color */
+		  color: white;               /* White text */
+		  padding: 10px 20px;         /* Add some padding */
+		  position: fixed;            /* Keep the bar fixed at the top */
+		  top: 0;                     /* Position at the top */
+		  width: 100%;                /* Full-width */
+		}
+
+		.top-bar a {
+		  color: white;               /* White links */
+		  text-decoration: none;      /* No underline */
+		  margin: 0 15px;             /* Spacing between links */
+		}
+
+		.top-bar a:hover {
+		  text-decoration: underline; /* Underline on hover */
+		}
+		.top-bar_flag {
+			position: relative; /* Enables fine control of the image */
+			top: 10px; /* Moves the image downward */
+			left: 5px; /* Optional: Moves the image slightly to the right */
+			transform: translateY(-7.5px); /* Alternatively, use this for vertical adjustment */
+		}
+		.backgrounded {
+			color: burlywood;
+		}
+    </style>
+</head>
+<body>
+	<div class="top-bar">
+		<img src="icons/ligmite_flag.png" width="30" height="15" class="top-bar_flag">
+		<a href="index.html">Home</a>
+		<a href="travel.html">Travel</a>
+		<a href="mfa.html">Ministry of Foreign Affairs</a>
+		<a href="citizenship.html">Apply for Citizenship</a>
+		<a href="party.html">Ligmite Communist Party</a>
+		<a href="military.html">LDF</a>
+		<img src="icons/ligmite_flag.png" width="30" height="15" class="top-bar_flag">
+	</div>
+    <h1 class="backgrounded">Citizenship Application Form for The Free State of Limga</h1>
+	<strong>You don't have to give up your other citizenships. Dual Citizenship is supported.</strong>
+    <form action="/submit" method="post">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="birthPlace">Place of Birth:</label>
+        <input type="text" id="birthPlace" name="birthPlace" required>
+
+        <label for="address">Current Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="currentCitizenship">Current Citizenship(s):</label>
+        <input type="text" id="currentCitizenship" name="currentCitizenship" required>
+
+        <label for="reason">Reason for Application:</label>
+        <textarea id="reason" name="reason" rows="4" required></textarea>
+
+        <label for="parentSpouse">Parent/Spouse Name (if applicable):</label>
+        <input type="text" id="parentSpouse" name="parentSpouse">
+
+        <label for="relationship">Relationship (if applicable):</label>
+        <input type="text" id="relationship" name="relationship">
+		
+		<label for="headshot">Link to headshot photo (neck up):</label>
+        <input type="ur;" id="headshot" name="headshot">
+
+        <strong>I declare that the information provided in this application is true and accurate to the best of my knowledge.</strong>
+
+        <label for="date">Current Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Submit Application</button>
+    </form>
+	<script>
+	document.querySelector('form').addEventListener('submit', async function(event) {
+		event.preventDefault(); // Prevent the default form submission
+
+		// Gather form data
+		const formData = new FormData(event.target);
+
+		// Convert formData to JSON
+		const jsonData = {};
+		formData.forEach((value, key) => {
+			jsonData[key] = value;
+		});
+
+		// Send data to Discord webhook
+		const webhookUrl = "https://discord.com/api/webhooks/1358229490110824558/eGpPjapm6Wu2_nZQILkEZlEHd_dG7rR_iiiNvSsZJ5ANUW2kGNNAoi6ndOtu0H3dCCnB";
+		try {
+			const response = await fetch(webhookUrl, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					content: "New Citizenship Application Submitted!",
+					embeds: [
+						{
+							title: "Application Details",
+							fields: Object.entries(jsonData).map(([key, value]) => ({
+								name: key,
+								value: value.toString(),
+								inline: true
+							}))
+						}
+					]
+				})
+			});
+
+			if (response.ok) {
+				alert("Application submitted successfully!");
+			} else {
+				alert("Failed to submit application. Please try again.");
+			}
+		} catch (error) {
+			console.error("Error submitting application:", error);
+			alert("An error occurred while submitting your application.");
+		}
+	});
+	</script>
+</body>
+</html>
