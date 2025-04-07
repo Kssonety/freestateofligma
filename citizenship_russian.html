@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apply for Ligmite Citizenship</title>
+    <title>Подать заявку на получение гражданства Ligmite</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-			background-color: lightblue;
             line-height: 1.5;
             margin: 20px;
+			background-color: lightblue;
         }
         h1 {
             color: #333;
@@ -19,7 +19,7 @@
             display: block;
             margin: 10px 0 5px;
         }
-        input, textarea {
+        input, textarea{
             width: 100%;
             padding: 8px;
             margin-bottom: 15px;
@@ -70,59 +70,59 @@
 <body>
 	<div class="top-bar">
 		<img src="icons/ligmite_flag.png" width="30" height="15" class="top-bar_flag">
-		<a href="index.html">Home</a>
-		<a href="travel.html">Travel</a>
-		<a href="mfa.html">Ministry of Foreign Affairs</a>
-		<a href="citizenship.html">Apply for Citizenship</a>
-		<a href="party.html">Ligmite Communist Party</a>
-		<a href="military.html">LDF</a>
+		<a href="index_russian.html">Дом</a>
+		<a href="travel_russian.html">Путешествовать</a>
+		<a href="mfa_russian.html">Министерство иностранных дел</a>
+		<a href="citizenship_russian.html">Подать заявление на получение гражданства</a>
+		<a href="party_russian.html">Коммунистическая партия Лигмита</a>
+		<a href="military_russian.html">ЛДФ</a>
 		<a href="citizenship.html"><img src="icons/british_flag.png" width="30" height="15" class="top-bar_flag"></a>
 		<a href="citizenship_russian.html"><img src="icons/russian_flag.png" width="30" height="15" class="top-bar_flag"></a>
 	</div>
-    <h1 class="backgrounded">Citizenship Application Form for The Free State of Limga</h1>
-	<strong>You don't have to give up your other citizenships. Dual Citizenship is supported.</strong>
+	<h1 class="backgrounded">Форма заявления на получение гражданства в свободном государстве Лимга</h1>
+	<strong>Вам не нужно отказываться от других гражданств. Двойное гражданство поддерживается.</strong>
 	<br>
-	<strong>We do not share this information, it is kept for security purposes</strong>
+	<strong>Мы не передаем эту информацию, она хранится в целях безопасности</strong>
     <form action="/submit" method="post">
-        <label for="fullName">Full Name:</label>
+        <label for="fullName">Полное имя:</label>
         <input type="text" id="fullName" name="fullName" required>
 
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required>
+        <label for="dob">Дата рождения:</label>
+        <input type="date" id="dob" name="dob" class="form_inputs" required>
 
-        <label for="birthPlace">Place of Birth:</label>
-        <input type="text" id="birthPlace" name="birthPlace" required>
+        <label for="birthPlace">Место рождения:</label>
+        <input type="text" id="birthPlace" name="birthPlace" class="form_inputs" required>
 
-        <label for="address">Current Address:</label>
-        <textarea id="address" name="address" rows="3" required></textarea>
+        <label for="address">Текущий адрес:</label>
+        <textarea id="address" name="address" rows="3" class="form_inputs" required></textarea>
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
+        <label for="phone">Номер телефона:</label>
+        <input type="tel" id="phone" name="phone" class="form_inputs" required>
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email">Адрес электронной почты:</label>
+        <input type="email" id="email" name="email" class="form_inputs" required>
 
-        <label for="currentCitizenship">Current Citizenship(s):</label>
-        <input type="text" id="currentCitizenship" name="currentCitizenship" required>
+        <label for="currentCitizenship">Текущее гражданство:</label>
+        <input type="text" id="currentCitizenship" class="form_inputs" name="currentCitizenship" required>
 
-        <label for="reason">Reason for Application:</label>
-        <textarea id="reason" name="reason" rows="4" required></textarea>
+        <label for="reason">Причина применения:</label>
+        <textarea id="reason" name="reason" rows="4" class="form_inputs" required></textarea>
 
-        <label for="parentSpouse">Parent/Spouse Name (if applicable):</label>
-        <input type="text" id="parentSpouse" name="parentSpouse">
+        <label for="parentSpouse">Имя родителя/супруга (если применимо):</label>
+        <input type="text" id="parentSpouse" class="form_inputs" name="parentSpouse">
 
-        <label for="relationship">Relationship (if applicable):</label>
-        <input type="text" id="relationship" name="relationship">
+        <label for="relationship">Родство (если применимо):</label>
+        <input type="text" id="relationship" class="form_inputs" name="relationship">
 		
-		<label for="headshot">Link to headshot photo (neck up):</label>
-        <input type="url" id="headshot" name="headshot">
+		<label for="headshot">Ссылка на фотографию хедшота (шея вверх):</label>
+        <input type="url" id="headshot" class="form_inputs" name="headshot">
 
-        <strong>I declare that the information provided in this application is true and accurate to the best of my knowledge.</strong>
+        <strong>Я заявляю, что информация, представленная в этом приложении, является правдивой и точной, насколько мне известно.</strong>
 
-        <label for="date">Current Date:</label>
-        <input type="date" id="date" name="date" required>
+        <label for="date">Текущая дата:</label>
+        <input type="date" id="date" class="form_inputs" name="date" required>
 
-        <button type="submit">Submit Application</button>
+        <button type="submit">Подать заявку</button>
     </form>
 	<script>
 	document.querySelector('form').addEventListener('submit', async function(event) {
