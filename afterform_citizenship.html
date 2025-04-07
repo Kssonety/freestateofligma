@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank you for Applying!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            margin: 20px;
+			background-color: lightblue;
+        }
+        h1 {
+            color: #333;
+			margin-top: 60px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+		.top-bar {
+		  background-color: midnightblue; /* Light blue background color */
+		  color: white;               /* White text */
+		  padding: 10px 20px;         /* Add some padding */
+		  position: fixed;            /* Keep the bar fixed at the top */
+		  top: 0;                     /* Position at the top */
+		  width: 100%;                /* Full-width */
+		}
+
+		.top-bar a {
+		  color: white;               /* White links */
+		  text-decoration: none;      /* No underline */
+		  margin: 0 15px;             /* Spacing between links */
+		}
+
+		.top-bar a:hover {
+		  text-decoration: underline; /* Underline on hover */
+		}
+		.top-bar_flag {
+			position: relative; /* Enables fine control of the image */
+			top: 10px; /* Moves the image downward */
+			left: 5px; /* Optional: Moves the image slightly to the right */
+			transform: translateY(-7.5px); /* Alternatively, use this for vertical adjustment */
+		}
+		.backgrounded {
+			color: burlywood;
+		}
+    </style>
+</head>
+<body>
+	<div class="top-bar">
+		<img src="icons/ligmite_flag.png" width="30" height="15" class="top-bar_flag">
+		<a href="index.html">Home</a>
+		<a href="travel.html">Travel</a>
+		<a href="mfa.html">Ministry of Foreign Affairs</a>
+		<a href="citizenship.html">Apply for Citizenship</a>
+		<a href="party.html">Ligmite Communist Party</a>
+		<a href="military.html">LDF</a>
+		<a href="afterform_citizenship.html"><img src="icons/british_flag.png" width="30" height="15" class="top-bar_flag"></a>
+		<a href="afterform_citizenship_russian.html"><img src="icons/russian_flag.png" width="30" height="15" class="top-bar_flag"></a>
+	</div>
+	<h1 class="backgrounded">Thank you for applying!</h1>
+	<h2>We will send you updates through your email.</h2>
+	<h3>We store this information for security purposes, we DO NOT share your information with ANYONE</h3>
+	<a href="index.html"><button>Back to Home</button></a>
+</body>
+</html>
